@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-bengali: "Hind Siliguri", sans-serif;
+  --font-display: "Space Grotesk", "Hind Siliguri", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html, body {
+  font-family: "Hind Siliguri", "Space Grotesk", system-ui, sans-serif;
+  background: #070d0a;
+  color: #e8f0ea;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-display { font-family: "Space Grotesk", "Hind Siliguri", sans-serif; }
+.font-mono2 { font-family: "JetBrains Mono", monospace; }
+
+/* Leaflet dark overrides */
+.leaflet-container {
+  background: #0b1410;
+  font-family: "Hind Siliguri", sans-serif;
+  outline: none;
+}
+.leaflet-control-zoom a {
+  background: #101c15 !important;
+  color: #a7f3d0 !important;
+  border-color: #1e3327 !important;
+}
+.leaflet-control-attribution {
+  background: rgba(7,13,10,.7) !important;
+  color: #5b6f62 !important;
+  font-size: 9px !important;
+}
+.leaflet-control-attribution a { color: #6ee7a8 !important; }
+.leaflet-popup-content-wrapper {
+  background: #0e1a13;
+  color: #e8f0ea;
+  border: 1px solid #1e3a2a;
+  border-radius: 12px;
+}
+.leaflet-popup-tip { background: #0e1a13; border: 1px solid #1e3a2a; }
+.leaflet-popup-content { margin: 12px 14px; font-family: "Hind Siliguri", sans-serif; }
+.leaflet-marker-icon.custom-div { background: transparent; border: none; }
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0a120d; }
+::-webkit-scrollbar-thumb { background: #1e3a2a; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #2b5440; }
+
+/* Animations */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes scanline {
+  0% { top: 0%; } 50% { top: 100%; } 100% { top: 0%; }
+}
+@keyframes blink-red {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.25; }
+}
+@keyframes float-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes ar-dash { to { stroke-dashoffset: -40; } }
+
+.anim-float-up { animation: float-up 0.5s ease both; }
+.anim-blink-red { animation: blink-red 1s infinite; }
+
+.glass {
+  background: rgba(14, 26, 19, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.grid-bg {
+  background-image: linear-gradient(rgba(110,231,168,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110,231,168,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.text-glow { text-shadow: 0 0 24px rgba(52, 211, 153, 0.45); }
+
+input[type="range"] { accent-color: #34d399; }
+input, select, textarea { font-family: "Hind Siliguri", sans-serif; }
